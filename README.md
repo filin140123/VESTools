@@ -1,10 +1,10 @@
 # VESP: Video Editing Scripts in Python
 
-**main.py** — Mass downloading youtube videos in highest possible quality and with sound
+**main.py** — Mass uploading of videos from YouTube with sound and the highest possible resolution
 
-**scenecutter.py** — Mass cutting videos by scenes and saving to appropriate directories
+**scenecutter.py** — Mass cutting of videos into scenes and saving them into the appropriate directories.
 
-Windows only.
+For Windows only.
 
 ## Requirements:
 - pytube: run `pip install pytube` in terminal
