@@ -1,5 +1,7 @@
 # dnc-script
-mass download youtube videos in highest possible quality and with sound
+Mass download youtube videos in highest possible quality and with sound.
+
+Windows only.
 
 ## Requirements:
 - pytube: run `pip install pytube` in terminal
