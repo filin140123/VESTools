@@ -1,7 +1,8 @@
 # VESP: Video Editing Scripts in Python
 
-main.py — Mass downloading youtube videos in highest possible quality and with sound.
-scenecutter.py — Mass cutting videos by scenes and saving to appropriate directories
+**main.py** — Mass downloading youtube videos in highest possible quality and with sound
+
+**scenecutter.py** — Mass cutting videos by scenes and saving to appropriate directories
 
 Windows only.
 
