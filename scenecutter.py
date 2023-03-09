@@ -6,7 +6,7 @@ def get_names(path=".", ext=".mp4") -> list:
     return [file for file in os.listdir(path) if file.endswith(ext)]
 
 
-def clear_name(text: str, chars= -,+\\/:?*\"<>|", repl="_") -> str:
+def clear_name(text: str, chars=" -,+\\/:?*\"<>|", repl="_") -> str:
     for char in chars:
         if char in text:
             text = text.replace(char, repl)
