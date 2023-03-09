@@ -2,7 +2,7 @@
 
 ## :uk: English Version
 
-**main.py** — Mass uploading of videos from YouTube with sound and the highest possible resolution
+**ytget.py** — Mass uploading of videos from YouTube with sound and the highest possible resolution
 
 **scenecutter.py** — Mass cutting of videos into scenes and saving them into the appropriate directories
 
@@ -15,7 +15,7 @@ _For **Windows** only_
 
 ## :ru: Русская версия
 
-**main.py** - массовая загрузка видео с YouTube со звуком и максимально возможным разрешением
+**ytget.py** - массовая загрузка видео с YouTube со звуком и максимально возможным разрешением
 
 **scenecutter.py** - массовая нарезка видео на сцены и сохранение их в соответствующие директории
 

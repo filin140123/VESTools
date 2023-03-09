@@ -1,24 +1,19 @@
 import os
 import time
 
-
-def get_names(path=".", ext=".mp4") -> list:
-    return [file for file in os.listdir(path) if file.endswith(ext)]
-
-
-def clear_name(text: str, chars=" -,+\\/:?*\"<>|", repl="_") -> str:
-    for char in chars:
-        if char in text:
-            text = text.replace(char, repl)
-    return text.lower()
+import vesputils as vu
+from settings import DIRNAME
 
 
-for name in get_names():
-    os.system(f"rename \"{name}\" {clear_name(name)}")
+def cut_videos() -> None:
+    for name in vu.get_names():
+        folder_name = name[:-4]
+        fpath = f"./{DIRNAME}/{folder_name}"
+        vpath = f"./{DIRNAME}/{name}"
+        os.system(f"if not exist \"{fpath}\" mkdir \"{fpath}\"")
+        os.system(f"scenedetect -i \"{vpath}\" detect-adaptive split-video -o \"{fpath}\"")
 
-for name in get_names():
-    folder_name = name[:-4]
-    os.system(f"if not exist {folder_name} mkdir {folder_name}")
-    os.system(f"scenedetect -i {name} detect-adaptive split-video -o \"./{folder_name}\"")
 
-input("Press any key to exit...")
+if __name__ == "__main__":
+    cut_videos()
+    input("Press any key to exit...")
