@@ -34,7 +34,7 @@ for idx, link in enumerate(links, 1):
         except URLError:
             vu.msg("Internet connection problems...")
             vu.msg("Trying again in 5 seconds...")
-            time.sleep(5)
+            vu.countdown(5)
 
     vurl = yt_streams.filter(adaptive=True).order_by("resolution")[-1].url
     aurl = yt_streams.get_by_itag(18).url

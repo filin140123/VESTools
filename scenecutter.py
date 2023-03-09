@@ -6,12 +6,17 @@ from settings import DIRNAME
 
 
 def cut_videos() -> None:
-    for name in vu.get_names():
+    videos = vu.get_names()
+    for idx, name in enumerate(videos, 1):
+        msg(f"Preparing video {idx} of {len(videos)}...")
+
         folder_name = name[:-4]
         fpath = f"./{DIRNAME}/{folder_name}"
         vpath = f"./{DIRNAME}/{name}"
         os.system(f"if not exist \"{fpath}\" mkdir \"{fpath}\"")
         os.system(f"scenedetect -i \"{vpath}\" detect-adaptive split-video -o \"{fpath}\"")
+
+        msg(f"Video {idx} of {len(videos)} is done!")
 
 
 if __name__ == "__main__":

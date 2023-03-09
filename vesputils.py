@@ -24,7 +24,14 @@ def msg(message: str) -> None:
     time.sleep(0.5)
 
 
+def countdown(n: int) -> None:
+    for i in range(n, 0, -1):
+        print(f"{i}... ", end="\r")
+        time.sleep(1)
+
+
 if __name__ == "__main__":
 	clear_name(text, fchars, gaps, repl)
 	get_names(path, ext)
 	msg(message)
+    countdown(n)
