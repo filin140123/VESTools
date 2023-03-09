@@ -5,7 +5,7 @@ import time
 from settings import DIRNAME
 
 
-def clear_name(text: str, fchars="|:<>/?*\\\"+", gaps=" -,&", repl="_") -> str:
+def clear_name(text: str, fchars="|:<>/*?\\\"+", gaps=" -,&", repl="_") -> str:
     for char in fchars:
         if char in text:
             text = text.replace(char, "")
