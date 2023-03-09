@@ -22,6 +22,7 @@ _For **Windows** only_
 _Только для **Windows**_
 
 ### Требования:
-- pytube: запустите `pip install pytube` в терминале
-- scenedetect: запустите `pip install scenedetect` в терминале
+- pytube: выполните `pip install pytube` в терминале
+- scenedetect: выполните `pip install scenedetect` в терминале
 - ffmpeg: скачайте архив с официального сайта, затем найдите `ffmpeg.exe`, поместите его в директорию на ваш выбор, затем выполните `set PATH=%PATH%;C:/ваша/директория` в терминале
+
