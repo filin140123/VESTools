@@ -31,7 +31,7 @@ def countdown(n: int) -> None:
 
 
 if __name__ == "__main__":
-	clear_name(text, fchars, gaps, repl)
-	get_names(path, ext)
-	msg(message)
+    clear_name(text, fchars, gaps, repl)
+    get_names(path, ext)
+    msg(message)
     countdown(n)

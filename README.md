@@ -6,23 +6,29 @@
 
 **scenecutter.py** — Mass cutting of videos into scenes and saving them into the appropriate directories
 
-_For **Windows** only_
+Image conversion or video cutting can be done directly with the `imgconv.py` and `scenecutter.py` scripts.
+
+You can tweak some attributes in `settings.py` file.
+
+_For **Windows** only (for now)_
 
 ### Requirements:
-- pytube: run `pip install pytube` in a terminal
-- scenedetect: run `pip install scenedetect` in a terminal
+- **pytube**, **scenedetect**, **imagesize**: run `pip install pytube scenedetect imagesize` in a terminal
 - ffmpeg: download the archive from the official site, then find `ffmpeg.exe`, put it in a directory of your choice, then run `set PATH=%PATH%;C:/your/dir/here` in a terminal
 
 ## :ru: Русская версия
 
-**ytget.py** - массовая загрузка видео с YouTube со звуком и максимально возможным разрешением
+**ytget.py** - массовая загрузка видео с YouTube со звуком и максимально возможным разрешением. Есть функция нарезки видео на сцены по желанию.
 
-**scenecutter.py** - массовая нарезка видео на сцены и сохранение их в соответствующие директории
+**imget** — массовая загрузка изображений по нескольким запросам из Google Images с опциями. Все фото конвертируются в формат `.png`
 
-_Только для **Windows**_
+Конвертация изображений или нарезка видео может быть выполнена непосредственно с помощью скриптов `imgconv.py` и `scenecutter.py`.
+
+Вы можете настроить некоторые атрибуты в файле `settings.py`.
+
+_Только для **Windows** (пока что)_
 
 ### Требования:
-- pytube: выполните `pip install pytube` в терминале
-- scenedetect: выполните `pip install scenedetect` в терминале
+- **pytube**, **scenedetect**, **imagesize**: выполните `pip install pytube scenedetect imagesize` в терминале
 - ffmpeg: скачайте архив с официального сайта, затем найдите `ffmpeg.exe`, поместите его в директорию на ваш выбор, затем выполните `set PATH=%PATH%;C:/ваша/директория` в терминале
 
