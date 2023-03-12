@@ -5,8 +5,7 @@ import vesputils as vu
 from settings import DIRNAME
 
 
-def cut_videos() -> None:
-    videos = vu.get_names()
+def cut_videos(videos) -> None:
     for idx, name in enumerate(videos, 1):
 
         vu.msg(f"Preparing video {idx} of {len(videos)}...")
