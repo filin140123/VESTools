@@ -2,9 +2,9 @@
 
 ## :uk: English Version
 
-**ytget.py** — Mass uploading of videos from YouTube with sound and the highest possible resolution
+**ytget.py** — Mass uploading of videos from YouTube with sound and the highest possible resolution. You can cut videos into scenes if you want
 
-**scenecutter.py** — Mass cutting of videos into scenes and saving them into the appropriate directories
+**imget.py** — Mass uploading of images from Google Images with options. All pictures will be converted to `.png` format
 
 Image conversion or video cutting can be done directly with the `imgconv.py` and `scenecutter.py` scripts.
 
@@ -18,7 +18,7 @@ _For **Windows** only (for now)_
 
 ## :ru: Русская версия
 
-**ytget.py** - массовая загрузка видео с YouTube со звуком и максимально возможным разрешением. Есть функция нарезки видео на сцены по желанию.
+**ytget.py** - массовая загрузка видео с YouTube со звуком и максимально возможным разрешением. Есть функция нарезки видео на сцены по желанию
 
 **imget.py** — массовая загрузка изображений по нескольким запросам из Google Images с опциями. Все фото конвертируются в формат `.png`
 
