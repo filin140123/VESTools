@@ -21,7 +21,7 @@ if not links:
     vu.msg("Links are invalid. Please try again...")
     restart()
 
-os.system(f"if not exist {DIRNAME} mkdir {DIRNAME}")
+vu.dircheck(DIRNAME)
 
 for idx, link in enumerate(links, 1):
     vu.msg(f"Trying to download video {idx} of {len(links)}...")

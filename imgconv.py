@@ -19,7 +19,7 @@ def prepare_images() -> None:
 
         if imagesize.get(path) == IMGJUNKSIZE:
             print(f"Deleting junk {info}...")
-            os.system(f"del {path}")
+            vu.delete(path)
 
         elif path.endswith(".png"):
             print(f"Skipping {info}...")
@@ -28,7 +28,7 @@ def prepare_images() -> None:
             print(f"Converting {info}...")
             img = Image.open(path)
             img.save(path.rsplit(".", 1)[0] + ".png", "png")
-            os.system(f"del {path}")
+            vu.delete(path)
 
     vu.msg(f"All {len(images)} images is converted!")
 

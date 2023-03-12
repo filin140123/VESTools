@@ -17,7 +17,7 @@ def cut_videos() -> None:
 
         os.system(f"if not exist \"{fpath}\" mkdir \"{fpath}\"")
         os.system(f"scenedetect -i \"{vpath}\" detect-adaptive split-video -o \"{fpath}\"")
-        os.system(f"del \"{os.path.abspath(vpath)}\"")
+        vu.delete(vpath)
 
         vu.msg(f"Video {idx} of {len(videos)} is done!")
 

@@ -6,18 +6,16 @@ import vesputils as vu
 from imgconv import prepare_images
 from settings import IMGDIRNAME, IMGDEFCOUNT
 
-user_req = input("Enter your requests divided by comma: ").replace(" ", "+").replace(",+", " ")
+user_req = input("Enter your requests divided by comma: ")
+user_cnt = int(input("How many images do you need?: "))
 
-try:
-    count = int(input("How many images do you need?: "))
-    count = count if count > 0 else IMGDEFCOUNT
-except ValueError:
-    count = IMGDEFCOUNT
+count = vu.posdef(user_cnt, IMGDEFCOUNT)
+clreq = user_req.replace(" ", "+").replace(",+", " ")
 
 vu.msg(f"Trying to download {count} images for each request...")
 
 my_downloader = idl.Downloader()
-my_downloader.download(user_req, limit=count)  
+my_downloader.download(clreq, limit=count)  
 
 '''
 TODO: Make a proper http.client.IncompleteRead 
@@ -26,7 +24,7 @@ TODO: Make a proper http.client.IncompleteRead
 
 prepare_images()  # Converting images and deleting junk files
 
-os.system(f"if not exist {IMGDIRNAME} mkdir {IMGDIRNAME}")
+vu.dircheck(IMGDIRNAME)
 os.system(f"xcopy /s /y /q simple_images {IMGDIRNAME}")
 os.system(f"rmdir /s /q simple_images")
 
