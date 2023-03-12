@@ -23,6 +23,8 @@ if not links:
 
 vu.dircheck(DIRNAME)
 
+videos = []
+
 for idx, link in enumerate(links, 1):
     vu.msg(f"Trying to download video {idx} of {len(links)}...")
 
@@ -45,10 +47,12 @@ for idx, link in enumerate(links, 1):
 
     vu.msg(f"Video {idx} of {len(links)} is done!")
 
+    videos.append(path)
+
 vu.msg("All downloads is done!")
 action = input("Do you want to cut videos by scenes? (y/n): ")
 if action in "yY":
-    cut_videos()
+    cut_videos(videos)
 
 vu.msg("Job is done!")
 input("Press any key to exit...")
