@@ -1,4 +1,4 @@
-# Functions and data library. Not for use.
+# Utilities for scripts. Not for use.
 import os
 import time
 
@@ -13,10 +13,6 @@ def clear_name(text: str, fchars="|:<>/*?\\\"+", gaps=" -,&", repl="_") -> str:
         if char in text:
             text = text.replace(char, repl)
     return text.lower()
-
-
-def get_names(path=f"./{DIRNAME}", ext=".mp4") -> list:
-    return [file for file in os.listdir(path) if file.endswith(ext)]
 
 
 def posdef(value, default) -> int:
@@ -36,10 +32,6 @@ def countdown(n: int) -> None:
     for i in range(n, 0, -1):
         print(f"{i}... ", end="\r")
         time.sleep(1)
-
-
-def delete(path_to_file: str) -> None:
-    os.system(f"del {os.path.abspath(path_to_file)}")
 
 
 def dircheck(dirname: str) -> None:

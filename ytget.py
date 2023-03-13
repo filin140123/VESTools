@@ -28,11 +28,11 @@ videos = []
 for idx, link in enumerate(links, 1):
     vu.msg(f"Trying to download video {idx} of {len(links)}...")
 
-    flag = False
-    while not flag:
+    flag = True
+    while flag:
         try:
             yt_streams = YouTube(link).streams
-            flag = True
+            flag = False
         except URLError:
             vu.msg("Internet connection problems...")
             vu.msg("Trying again in 5 seconds...")

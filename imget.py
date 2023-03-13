@@ -1,4 +1,6 @@
 import os
+import http
+import requests
 
 from PIL import Image, UnidentifiedImageError
 import simple_image_download.simple_image_download as idl
@@ -7,20 +9,24 @@ from imgconv import prepare_images
 from settings import IMGDIRNAME, IMGDEFCOUNT
 
 user_req = input("Enter your requests divided by comma: ")
-user_cnt = int(input("How many images do you need?: "))
+user_cnt = input("How many images do you need?: ")
 
-count = vu.posdef(user_cnt, IMGDEFCOUNT)
-clreq = user_req.replace(" ", "+").replace(",+", " ")
+img_count = vu.posdef(user_cnt, IMGDEFCOUNT)
+clear_req = user_req.replace(" ", "+").replace(",+", " ")
 
-vu.msg(f"Trying to download {count} images for each request...")
+vu.msg(f"Trying to download {img_count} images for each request...")
 
-my_downloader = idl.Downloader()
-my_downloader.download(clreq, limit=count)  
+downloader = idl.Downloader()
 
-'''
-TODO: Make a proper http.client.IncompleteRead 
-      and requests.excpetions.ConnectionError handling
-'''
+flag = True
+while flag:
+    try:
+        downloader.download(clear_req, limit=img_count)
+        flag = False
+    except (http.client.IncompleteRead, requests.exceptions.ConnectionError):
+        vu.msg("Server or parsing problems...")
+        vu.msg("Trying again in 5 seconds...")
+        vu.countdown(5)
 
 prepare_images()  # Converting images and deleting junk files
 

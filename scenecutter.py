@@ -6,17 +6,13 @@ from settings import DIRNAME
 
 
 def cut_videos(videos) -> None:
-    for idx, name in enumerate(videos, 1):
-
+    for idx, video in enumerate(videos, 1):
         vu.msg(f"Preparing video {idx} of {len(videos)}...")
 
-        folder_name = name[:-4]
-        fpath = f"./{DIRNAME}/{folder_name}"
-        vpath = f"./{DIRNAME}/{name}"
-
-        os.system(f"if not exist \"{fpath}\" mkdir \"{fpath}\"")
-        os.system(f"scenedetect -i \"{vpath}\" detect-adaptive split-video -o \"{fpath}\"")
-        vu.delete(vpath)
+        scenedir = video[:-4]
+        vu.dircheck(scenedir)
+        os.system(f"scenedetect -i \"{video}\" detect-adaptive split-video -o \"{scenedir}\"")
+        os.remove(video)
 
         vu.msg(f"Video {idx} of {len(videos)} is done!")
 
@@ -24,5 +20,5 @@ def cut_videos(videos) -> None:
 
 
 if __name__ == "__main__":
-    cut_videos()
+    cut_videos([file for file in os.listdir(DIRNAME) if file.endswith(".mp4")])
     input("Press any key to exit...")

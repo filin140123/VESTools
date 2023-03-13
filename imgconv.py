@@ -11,26 +11,30 @@ from settings import IMGJUNKSIZE
 def prepare_images() -> None:
     images = glob.glob(".\\simple_images\\**\\*")
 
-    vu.msg(f"Trying to convert {len(images)} images...")
+    icount = len([i for i in images if "." in i])
+    vu.msg(f"Processing {icount} images...")
 
-    for idx, path in enumerate(images):
+    ocount = 0
+    for idx, path in enumerate(images, 1):
 
         info = f"image #{idx}, {path[16:]}"
 
         if imagesize.get(path) == IMGJUNKSIZE:
             print(f"Deleting junk {info}...")
-            vu.delete(path)
+            os.remove(path)
 
         elif path.endswith(".png"):
             print(f"Skipping {info}...")
+            ocount += 1
 
         else:
             print(f"Converting {info}...")
             img = Image.open(path)
             img.save(path.rsplit(".", 1)[0] + ".png", "png")
-            vu.delete(path)
+            os.remove(path)
+            ocount += 1
 
-    vu.msg(f"All {len(images)} images is converted!")
+    vu.msg(f"{ocount} images is converted!")
 
 if __name__ == "__main__":
     prepare_images()
