@@ -13,7 +13,7 @@ def clear_name(text: str, fchars="|:<>/*?\\\"+", gaps=" -,&", repl="_") -> str:
     return text.lower()
 
 
-def posdef(value, default) -> int:
+def get_amount(value, default) -> int:
     try:
         value = int(value)
         return value if value > 0 else default

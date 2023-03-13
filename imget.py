@@ -11,7 +11,7 @@ from settings import IMGDIRNAME, IMGDEFCOUNT
 user_req = input("Enter your requests divided by comma: ")
 user_cnt = input("How many images do you need?: ")
 
-img_count = vu.posdef(user_cnt, IMGDEFCOUNT)
+img_count = vu.get_amount(user_cnt, IMGDEFCOUNT)
 clear_req = user_req.replace(" ", "+").replace(",+", " ")
 
 vu.msg(f"Trying to download {img_count} images for each request...")
