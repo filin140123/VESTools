@@ -9,17 +9,15 @@ from scenecutter import cut_videos
 import vesputils as vu
 
 
-def restart() -> None:
-    input("Press any key to restart...")
-    os.system(f"cls && {os.path.basename(__file__)}")
+iflag = True
+while iflag:
+    user_input = input("Enter link or list of links divided by whitespace: ")
+    links = [i for i in user_input.split() if "youtu" in i]
 
-
-user_input = input("Enter link or list of links divided by whitespace: ")
-
-links = [i for i in user_input.split() if "youtu" in i]
-if not links:
-    vu.msg("Links are invalid. Please try again...")
-    restart()
+    if not links:
+        vu.msg("Links are invalid. Please try again...")
+    else:
+        iflag = False
 
 vu.dircheck(DIRNAME)
 
@@ -28,11 +26,11 @@ videos = []
 for idx, link in enumerate(links, 1):
     vu.msg(f"Trying to download video {idx} of {len(links)}...")
 
-    flag = True
-    while flag:
+    sflag = True
+    while sflag:
         try:
             yt_streams = YouTube(link).streams
-            flag = False
+            sflag = False
         except URLError:
             vu.msg("Internet connection problems...")
             vu.msg("Trying again in 5 seconds...")
