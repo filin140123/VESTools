@@ -1,4 +1,4 @@
-# VESP: Video Editing Scripts in Python
+# VESTools: Video Editing Scripts and Tools
 
 ## :uk: English Version
 
