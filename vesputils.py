@@ -2,8 +2,6 @@
 import os
 import time
 
-from settings import DIRNAME
-
 
 def clear_name(text: str, fchars="|:<>/*?\\\"+", gaps=" -,&", repl="_") -> str:
     for char in fchars:
