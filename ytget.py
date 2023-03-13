@@ -1,12 +1,11 @@
 import os
-import time
 
 from urllib.error import URLError
 from pytube import YouTube
 
+import vesputils as vu
 from settings import DIRNAME
 from scenecutter import cut_videos
-import vesputils as vu
 
 
 iflag = True
