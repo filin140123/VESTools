@@ -1,17 +1,20 @@
 import os
-import time
 
 import vesputils as vu
 from settings import DIRNAME
 
 
-def cut_videos(videos) -> None:
+def cut_videos(videos: list) -> None:
+    """
+    :param videos: List of paths to videos
+    :return: None
+    """
     for idx, video in enumerate(videos, 1):
         vu.msg(f"Preparing video {idx} of {len(videos)}...")
 
-        scenedir = video[:-4]
-        vu.dircheck(scenedir)
-        os.system(f"scenedetect -i \"{video}\" detect-adaptive split-video -o \"{scenedir}\"")
+        scene_dir = video[:-4]
+        vu.dircheck(scene_dir)
+        os.system(f"scenedetect -i \"{video}\" detect-adaptive split-video -o \"{scene_dir}\"")
         os.remove(video)
 
         vu.msg(f"Video {idx} of {len(videos)} is done!")

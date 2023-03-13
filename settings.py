@@ -1,9 +1,9 @@
 # DIRECTORY NAMES AND OTHER SETTINGS
 
 # ytget
-DIRNAME = "ytfootage"
+DIRNAME: str = "ytfootage"
 
 # imget
-IMGDIRNAME = "pictures"
-IMGDEFCOUNT = 10
-IMGJUNKSIZE = (80, 36)  # Do not touch
+IMGDIRNAME: str = "pictures"
+IMGDEFCOUNT: int = 10
+IMGJUNKSIZE: tuple = (80, 36)  # Do not touch

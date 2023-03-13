@@ -9,6 +9,10 @@ from settings import IMGJUNKSIZE
 
 
 def prepare_images() -> None:
+    """
+    Deletes junk images and converting non-png files to png.
+    :return: None
+    """
     images = glob.glob(".\\simple_images\\**\\*")
 
     icount = len([i for i in images if "." in i])
@@ -35,6 +39,7 @@ def prepare_images() -> None:
             ocount += 1
 
     vu.msg(f"{ocount} images is converted!")
+
 
 if __name__ == "__main__":
     prepare_images()

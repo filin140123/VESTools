@@ -8,7 +8,7 @@ from settings import DIRNAME
 from scenecutter import cut_videos
 
 
-iflag = True
+links, iflag = None, True
 while iflag:
     user_input = input("Enter link or list of links divided by whitespace: ")
     links = [i for i in user_input.split() if "youtu" in i]
@@ -25,7 +25,7 @@ videos = []
 for idx, link in enumerate(links, 1):
     vu.msg(f"Trying to download video {idx} of {len(links)}...")
 
-    sflag = True
+    yt_streams, sflag = None, True
     while sflag:
         try:
             yt_streams = YouTube(link).streams
