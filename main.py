@@ -20,17 +20,25 @@ ytget       Mass YT videos download
 imget       Mass images download
 version     See version of VESTools
 settings    See settings
+getreqs     Refresh all requirments
 exit        Exit the application
 
         --- Experimental ---
 scenes      Cut videos into scenes
 imgconv     Convert images into .png
+oldimget    Mass images download (old version)
+            in case if imget not working 
 """)
 
 
 @vestools_shell.command()
 def ytget():
     os.system("python ytget.py")
+
+
+@vestools_shell.command()
+def oldimget():
+    os.system("python oldimget.py")
 
 
 @vestools_shell.command()
@@ -46,6 +54,11 @@ def scenes():
 @vestools_shell.command()
 def imgconv():
     os.system("python imgconv.py")
+
+
+@vestools_shell.command()
+def getreqs():
+    os.system("python getreqs.py")
 
 
 @vestools_shell.command()

@@ -13,7 +13,7 @@ def prepare_images() -> None:
     Deletes junk images and converting non-png files to png.
     :return: None
     """
-    images = glob.glob(".\\simple_images\\**\\*")
+    images = glob.glob(".\\simple_images\\**\\*") or glob.glob(".\\downloads\\**\\*")
 
     icount = len([i for i in images if "." in i])
     vu.msg(f"Processing {icount} images...")

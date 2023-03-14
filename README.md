@@ -15,11 +15,30 @@ You can tweak some attributes in `settings.py` file.
 _For **Windows** only (for now)_
 
 ### Requirements:
-Run `!installreqs.py` OR
+Launch `getreqs.py` or do installation yourself:
 
-- **requests**, **click-shell**, **pillow**, **pytube**, **scenedetect**, **imagesize**: run `pip install click-shell pillow pytube scenedetect imagesize` in a terminal
-- **ffmpeg**: download the archive from the official site, then find `ffmpeg.exe` in it, put it in a directory of your choice, then run `set PATH=%PATH%;C:/your/dir/here` in a terminal
+#### Python Packages
 
+Run in a terminal:
+```cmd
+pip install click-shell pillow pytube scenedetect imagesize google_images_download
+```
+
+#### FFMPEG
+
+Download the archive from the official site, then find `ffmpeg.exe` in `/bin` folder, put it in a directory of your choice, then run in a terminal:
+```cmd
+set PATH=%PATH%;C:/your/dir/here
+```
+
+#### Fixing google_images_download
+
+You need to fix `google_images_download` package.
+
+- Download this file: [GitHub Link](https://github.com/Joeclinton1/google-images-download/raw/patch-1/google_images_download/google_images_download.py)
+- Go to: `C:\Users\YOUR_NAME_HERE\AppData\Local\Programs\Python\YOUR_PYTHON_VERSION_HERE\Lib\site-packages\google_images_download`
+- Replace `google_images_download.py` with file that you get earlier and open it in code editor
+- Replace 407 line (`info = data[11]`) with `info = data[23]` and save
 
 ## :ru: Русская версия
 
@@ -36,8 +55,27 @@ Run `!installreqs.py` OR
 _Только для **Windows** (пока что)_
 
 ### Требования:
-Запустите `!installreqs.py` ИЛИ
+Запустите `getreqs.py` или настройте все сами:
 
-- **requests**, **click-shell**, **pillow**, **pytube**, **scenedetect**, **imagesize**: запустите `!installreqs.bat` ИЛИ выполните `pip install requests click-shell pillow pytube scenedetect imagesize` в терминале
-- **ffmpeg**: скачайте архив с официального сайта, затем найдите там `ffmpeg.exe`, поместите его в директорию на ваш выбор, затем выполните `set PATH=%PATH%;C:/ваша/директория` в терминале
+#### Пакеты Python
 
+Выполните в терминале:
+```cmd
+pip install click-shell pillow pytube scenedetect imagesize google_images_download
+```
+
+#### FFMPEG
+
+Скачайте архив с официального сайта, затем найдите там `ffmpeg.exe` в папке `bin`, поместите его в директорию на ваш выбор, затем выполните в терминале:
+```cmd
+set PATH=%PATH%;C:/your/dir/here
+```
+
+#### Чиним пакет google_images_download
+
+Нужно исправить пакет `google_images_download`.
+
+- Скачайте файл: [GitHub Link](https://github.com/Joeclinton1/google-images-download/raw/patch-1/google_images_download/google_images_download.py)
+- Перейдите сюда: `C:\Users\YOUR_NAME_HERE\AppData\Local\Programs\Python\YOUR_PYTHON_VERSION_HERE\Lib\site-packages\google_images_download`
+- Замените `google_images_download.py` файлом, который вы скачали ранее и откройте его в редакторе кода
+- Замените 407-ую строку (`info = data[11]`) на `info = data[23]` и сохраните файл

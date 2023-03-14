@@ -1,36 +1,27 @@
 import os
-import http
-import requests
 
 import imgconv
 import vesputils as vu
 from settings import IMGDIRNAME, IMGDEFCOUNT
-from simple_image_download.simple_image_download import Downloader
+from google_images_download import google_images_download
 
 
-user_req = input("Enter your requests divided by comma: ")
-user_cnt = input("How many images do you need?: ")
+response = google_images_download.googleimagesdownload()
 
-img_count = vu.get_amount(user_cnt, IMGDEFCOUNT)
-clear_req = user_req.replace(" ", "+").replace(",+", " ")
+user_request = input("Enter your requests divided by comma: ")
+user_amount = input("How many images do you need?: ")
 
-vu.msg(f"Trying to download {img_count} images for each request...")
+img_amount = vu.get_amount(user_amount, IMGDEFCOUNT)
 
-flag = True
-while flag:
-    try:
-        Downloader().download(clear_req, limit=img_count)
-        flag = False
-    except (http.client.IncompleteRead, requests.exceptions.ConnectionError):
-        vu.msg("Server or parsing problems...")
-        vu.msg("Trying again in 5 seconds...")
-        vu.countdown(5)
+vu.msg(f"Trying to download {img_amount} images for each request...")
+
+response.download({"keywords": user_request, "limit": img_amount})
 
 imgconv.prepare_images()  # Converting images and deleting junk files
 
 vu.dircheck(IMGDIRNAME)
-os.system(f"xcopy /s /y /q simple_images {IMGDIRNAME}")
-os.system(f"rmdir /s /q simple_images")
+os.system(f"xcopy /s /y /q downloads {IMGDIRNAME}")
+os.system(f"rmdir /s /q downloads")
 
 vu.msg("Job is done!")
 
