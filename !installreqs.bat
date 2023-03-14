@@ -1,0 +1,1 @@
+pip install click-shell pillow pytube scenedetect imagesize
