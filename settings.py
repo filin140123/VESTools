@@ -9,4 +9,4 @@ IMGDEFCOUNT: int = 10
 IMGJUNKSIZE: tuple = (80, 36)  # Do not touch
 
 # version
-VERSION = "0.1, Chitin"
+VERSION = "0.1.1, Chitin"
