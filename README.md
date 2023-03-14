@@ -13,8 +13,8 @@ You can tweak some attributes in `settings.py` file.
 _For **Windows** only (for now)_
 
 ### Requirements:
-- **pytube**, **scenedetect**, **imagesize**: run `pip install pytube scenedetect imagesize` in a terminal
-- ffmpeg: download the archive from the official site, then find `ffmpeg.exe` in it, put it in a directory of your choice, then run `set PATH=%PATH%;C:/your/dir/here` in a terminal
+- **click-shell**, **pillow**, **pytube**, **scenedetect**, **imagesize**: launch `!installreqs.bat` OR run `pip install click-shell pillow pytube scenedetect imagesize` in a terminal
+- **ffmpeg**: download the archive from the official site, then find `ffmpeg.exe` in it, put it in a directory of your choice, then run `set PATH=%PATH%;C:/your/dir/here` in a terminal
 
 
 ## :ru: Русская версия
@@ -30,6 +30,6 @@ _For **Windows** only (for now)_
 _Только для **Windows** (пока что)_
 
 ### Требования:
-- **pytube**, **scenedetect**, **imagesize**: выполните `pip install pytube scenedetect imagesize` в терминале
-- ffmpeg: скачайте архив с официального сайта, затем найдите там `ffmpeg.exe`, поместите его в директорию на ваш выбор, затем выполните `set PATH=%PATH%;C:/ваша/директория` в терминале
+- **click-shell**, **pillow**, **pytube**, **scenedetect**, **imagesize**: запустите `!installreqs.bat` ИЛИ выполните `pip install click-shell pillow pytube scenedetect imagesize` в терминале
+- **ffmpeg**: скачайте архив с официального сайта, затем найдите там `ffmpeg.exe`, поместите его в директорию на ваш выбор, затем выполните `set PATH=%PATH%;C:/ваша/директория` в терминале
 
