@@ -30,7 +30,7 @@ while flag:
 imgconv.prepare_images()  # Converting images and deleting junk files
 
 vu.dircheck(IMGDIRNAME)
-os.system(f"xcopy /s /y /q simple_images {IMGDIRNAME}")
+os.system(f"xcopy /s /y /q simple_images {IMGDIRNAME} > nul")
 shutil.rmtree(os.path.abspath("simple_images"))
 
 vu.msg("Job is done!")

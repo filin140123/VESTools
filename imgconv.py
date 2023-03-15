@@ -21,7 +21,7 @@ def prepare_images() -> None:
     ocount = 0
     for idx, path in enumerate(images, 1):
 
-        info = f"image #{idx}, {path[16:]}"
+        info = f"image #{idx}, {path}"
 
         if imagesize.get(path) == IMGJUNKSIZE:
             print(f"Deleting junk {info}...")

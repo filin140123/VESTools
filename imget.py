@@ -21,7 +21,7 @@ response.download({"keywords": user_request, "limit": img_amount})
 imgconv.prepare_images()  # Converting images and deleting junk files
 
 vu.dircheck(IMGDIRNAME)
-os.system(f"xcopy /s /y /q downloads {IMGDIRNAME}")
+os.system(f"xcopy /s /y /q downloads {IMGDIRNAME} > nul")
 shutil.rmtree(os.path.abspath("downloads"))
 
 vu.msg("Job is done!")
