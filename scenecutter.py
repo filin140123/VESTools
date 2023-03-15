@@ -1,3 +1,7 @@
+"""
+Cutting videos into scenes
+"""
+
 import os
 
 import vesputils as vu

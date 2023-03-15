@@ -48,13 +48,13 @@ def msg(message: str) -> None:
     time.sleep(0.5)
 
 
-def countdown(n: int) -> None:
+def countdown(seconds: int) -> None:
     """
     Counting down from n to zero
-    :param n: Seconds to zero
+    :param seconds: Seconds to zero
     :return: None
     """
-    for i in range(n, 0, -1):
+    for i in range(seconds, 0, -1):
         print(f"{i}... ", end="\r")
         time.sleep(1)
 

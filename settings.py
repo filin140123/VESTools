@@ -1,12 +1,16 @@
-# DIRECTORY NAMES AND OTHER SETTINGS
+"""
+DIRECTORY NAMES AND OTHER SETTINGS
+"""
 
 # ytget
 DIRNAME: str = "ytfootage"
+FFMPEGARGS: str = "-acodec aac -b:a 192k -avoid_negative_ts " \
+                  "make_zero -map 0:v:0 -map 1:a:0"
 
 # imget
 IMGDIRNAME: str = "pictures"
 IMGDEFCOUNT: int = 10
-IMGJUNKSIZE: tuple = (80, 36)  # Do not touch
+IMGJUNKSIZE: tuple = (80, 36)
 
 # getreqs
 FFMPEGURL: str = "https://www.gyan.dev/ffmpeg/builds/" \

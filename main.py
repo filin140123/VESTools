@@ -1,17 +1,30 @@
+"""
+Main file aka shell
+"""
+
 import os
 
-import settings as st
 from click_shell import shell
+
+import settings as st
 
 
 @shell(prompt="vestools > ", intro="""Welcome to the VESTools!
-Please enter a command down below. If you want to see a list of all avaliable commands, enter "manual".\n""")
+Please enter a command down below. Enter "h" to see a list of all avaliable commands.\n""")
 def vestools_shell():
+    """
+    Init shell
+    :return: None
+    """
     pass
 
 
 @vestools_shell.command()
-def manual():
+def h():
+    """
+    Prints help
+    :return: None
+    """
     print("""\nList of commands:
     
         --- Main commands ---
