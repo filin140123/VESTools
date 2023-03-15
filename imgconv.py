@@ -33,8 +33,8 @@ def prepare_images() -> None:
 
         else:
             print(f"Converting {info}...")
-            img = Image.open(path)
-            img.save(path.rsplit(".", 1)[0] + ".png", "png")
+            with Image.open(path) as img:
+                img.save(path.rsplit(".", 1)[0] + ".png", "png")
             os.remove(path)
             ocount += 1
 

@@ -1,4 +1,5 @@
 import os
+import shutil
 
 import imgconv
 import vesputils as vu
@@ -21,7 +22,7 @@ imgconv.prepare_images()  # Converting images and deleting junk files
 
 vu.dircheck(IMGDIRNAME)
 os.system(f"xcopy /s /y /q downloads {IMGDIRNAME}")
-os.system(f"rmdir /s /q downloads")
+shutil.rmtree(os.path.abspath("downloads"))
 
 vu.msg("Job is done!")
 

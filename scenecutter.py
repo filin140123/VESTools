@@ -13,15 +13,13 @@ def cut_videos(videos: list) -> None:
         vu.msg(f"Preparing video {idx} of {len(videos)}...")
 
         scene_dir = video[:-4]
-        vu.dircheck(scene_dir)
         os.system(f"scenedetect -i \"{video}\" detect-adaptive split-video -o \"{scene_dir}\"")
         os.remove(video)
 
         vu.msg(f"Video {idx} of {len(videos)} is done!")
 
-    vu.msg("Job is done!")
-
 
 if __name__ == "__main__":
     cut_videos([file for file in os.listdir(DIRNAME) if file.endswith(".mp4")])
+    vu.msg("Job is done!")
     input("Press any key to exit...")
