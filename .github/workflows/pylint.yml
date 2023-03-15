@@ -17,7 +17,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pylint
+        pip install pylint requests click-shell pillow pytube scenedetect imagesize google_images_download
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')

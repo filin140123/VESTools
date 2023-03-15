@@ -1,3 +1,7 @@
+"""
+Image convertation module
+"""
+
 import glob
 import os
 
@@ -28,11 +32,11 @@ def prepare_images() -> None:
             os.remove(path)
 
         elif path.endswith(".png"):
-            print(f"Skipping {info}...")
+            print(f"     Skipping {info}...")
             ocount += 1
 
         else:
-            print(f"Converting {info}...")
+            print(f"   Converting {info}...")
             with Image.open(path) as img:
                 img.save(path.rsplit(".", 1)[0] + ".png", "png")
             os.remove(path)

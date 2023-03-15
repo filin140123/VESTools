@@ -1,9 +1,14 @@
+"""
+Requirements autoinstall
+"""
+
 import os
 import glob
 import shutil
 from zipfile import ZipFile
 
 import vesputils as vu
+from settings import FFMPEGURL, GIDDIR, GIDFIXURL
 
 try:
     import wget
@@ -13,18 +18,17 @@ except ImportError:
 
 # Installing python packages
 vu.msg("Installing python packages...")
-os.system("pip install requests click-shell pillow pytube scenedetect imagesize google_images_download")
+os.system("pip install requests click-shell pillow pytube "
+          "scenedetect imagesize google_images_download")
 
 # Fixing google_image_download
 vu.msg("Fixing google_images_download...")
-gid_dir = glob.glob("C:\\Users\\*\\AppData\\Local\\Programs\\Python\\*\\Lib\\site-packages\\google_images_download")[0]
+gid_dir = glob.glob(GIDDIR)[0]
 os.remove(f"{gid_dir}\\google_images_download.py")
-fix_url = "https://github.com/Joeclinton1/google-images-download/raw/patch-1/google_images_download" \
-          "/google_images_download.py"
-wget.download(fix_url, out=gid_dir)
-with open(f"{gid_dir}\\google_images_download.py", "r") as f:
+wget.download(GIDFIXURL, out=gid_dir)
+with open(f"{gid_dir}\\google_images_download.py", "r", encoding="utf-8") as f:
     data = f.readlines()
-with open(f"{gid_dir}\\google_images_download.py", "w") as f:
+with open(f"{gid_dir}\\google_images_download.py", "w", encoding="utf-8") as f:
     for idx, line in enumerate(data, 1):
         if idx == 407:
             f.writelines(" " * 12 + "info = data[23]" + "\n")
@@ -33,7 +37,7 @@ with open(f"{gid_dir}\\google_images_download.py", "w") as f:
 
 # # Downloading FFMPEG
 vu.msg("Downloading FFMPEG...")
-wget.download("https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip")
+wget.download(FFMPEGURL)
 
 # Extracting ffmpeg.exe
 vu.msg("Extracting ffmpeg.exe...")

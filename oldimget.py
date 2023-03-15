@@ -1,3 +1,7 @@
+"""
+Getting images, old version
+"""
+
 import os
 import shutil
 import http

@@ -1,4 +1,6 @@
-# Utilities for scripts. Not for use.
+"""
+Utilities for scripts. Not for use.
+"""
 
 import os
 import time
