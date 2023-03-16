@@ -10,7 +10,7 @@ import settings as st
 
 
 @shell(prompt="vestools > ", intro="""Welcome to the VESTools!
-Please enter a command down below. Enter "h" to see a list of all avaliable commands.\n""")
+Please enter a command down below. Enter "help" to see a list of all avaliable commands.\n""")
 def vestools_shell():
     """
     Init shell
@@ -20,7 +20,7 @@ def vestools_shell():
 
 
 @vestools_shell.command()
-def h():
+def help() -> None:
     """
     Prints help
     :return: None

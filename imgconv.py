@@ -25,18 +25,18 @@ def prepare_images() -> None:
     ocount = 0
     for idx, path in enumerate(images, 1):
 
-        info = f"image #{idx}, {path}"
+        info = f"image #{idx}, " + path.split("\\")[-1]
 
         if imagesize.get(path) == IMGJUNKSIZE:
-            print(f"Deleting junk {info}...")
+            print(f"Deleting junk {info}")
             os.remove(path)
 
         elif path.endswith(".png"):
-            print(f"     Skipping {info}...")
+            print(f"     Skipping {info}")
             ocount += 1
 
         else:
-            print(f"   Converting {info}...")
+            print(f"   Converting {info}")
             with Image.open(path) as img:
                 img.save(path.rsplit(".", 1)[0] + ".png", "png")
             os.remove(path)

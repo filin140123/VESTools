@@ -10,7 +10,7 @@ from settings import DIRNAME
 
 def cut_videos(videos: list) -> None:
     """
-    :param videos: List of paths to videos
+    :param videos: List of videos' paths
     :return: None
     """
     for idx, video in enumerate(videos, 1):

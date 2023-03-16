@@ -2,11 +2,11 @@
 Utilities for scripts. Not for use.
 """
 
-import os
 import time
+from settings import IMGDEFCOUNT
 
 
-def clear_name(text: str, fchars: str = "|:<>/*?\\\"+", gaps: str = " -,&", repl: str = "_") -> str:
+def clear_name(text: str, fchars="|:<>/*?\\\"+", gaps=" -—,&", repl="_") -> str:
     """
     Removes forbidden characters from string and replaces whitespaces with specified symbol
     :param text: string to clean
@@ -21,51 +21,47 @@ def clear_name(text: str, fchars: str = "|:<>/*?\\\"+", gaps: str = " -,&", repl
     for char in gaps:
         if char in text:
             text = text.replace(char, repl)
-    return text.lower()
+    while True:
+        if "__" in text:
+            text = text.replace("__", repl)
+        else:
+            break
+    result = text.lower()
+    return result
 
 
-def get_amount(value: str, default: int) -> int:
+def get_amount(value: str, default=IMGDEFCOUNT) -> int:
     """
     Make sure value is int and more than 0. Otherwise returns default value.
     :param value: raw string input
     :param default: default integer value
     :return: user value or default value, depends on input
     """
-    try:
-        value = int(value)
-        return value if value > 0 else default
-    except ValueError:
-        return default
+    if isinstance(value, int) and value > 0:
+        return default if value is True else value
+    return default
 
 
-def msg(message: str) -> None:
+def msg(message: str, seconds=0.5, refresh=False) -> None:
     """
     Prints a message with 0.5 second pause
-    :param message: Text to print
+    :param message: Text to print, str
+    :param seconds: Seconds to wait, can be int or float
+    :param refresh: Erase output after waiting? True or False
     :return: None
     """
-    print(message)
-    time.sleep(0.5)
+    print(message, end="\r" if refresh else "\n")
+    time.sleep(seconds)
 
 
-def countdown(seconds: int) -> None:
+def countdown(waitfor: int) -> None:
     """
     Counting down from n to zero
-    :param seconds: Seconds to zero
+    :param waitfor: Seconds to zero
     :return: None
     """
-    for i in range(seconds, 0, -1):
-        print(f"{i}... ", end="\r")
-        time.sleep(1)
-
-
-def dircheck(dirname: str) -> None:
-    """
-    Creates directory if it not exist already
-    :param dirname: Directory name you want to create
-    :return: None
-    """
-    os.system(f"if not exist {dirname} mkdir {dirname}")
+    for i in range(waitfor, 0, -1):
+        msg(f"{i}... ", seconds=1, refresh=True)
 
 
 if __name__ == "__main__":
