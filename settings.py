@@ -11,6 +11,9 @@ IMGDIRNAME: str = "pictures"
 IMGDEFCOUNT: int = 10
 IMGJUNKSIZE: tuple = (80, 36)
 
+# auget
+AUDIRNAME: str = "audio"
+
 # getreqs
 FFMPEGURL: str = "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip"
 GIDDIR: str = "C:\\Users\\*\\AppData\\Local\\Programs\\Python\\*\\Lib\\site-packages\\google_images_download"

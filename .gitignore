@@ -5,6 +5,7 @@ __pycache__/
 pictures/
 simple_images/
 ytfootage/
+audio/
 
 *.pyc
 *.zip

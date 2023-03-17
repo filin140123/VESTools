@@ -31,6 +31,7 @@ def help() -> None:
 help        See this list
 ytget       Mass YT videos download
 imget       Mass images download
+auget       Mass audio extractor
 version     See version of VESTools
 settings    See settings
 getreqs     Refresh all requirments
@@ -96,6 +97,15 @@ def getreqs():
     :return: None
     """
     os.system("python getreqs.py")
+
+
+@vestools_shell.command()
+def auget():
+    """
+    Launch auget.py
+    :return: None
+    """
+    os.system("python auget.py")
 
 
 @vestools_shell.command()
