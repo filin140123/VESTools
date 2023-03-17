@@ -8,6 +8,8 @@
 
 **imget.py** — Mass uploading of images from Google Images with options. All pictures will be converted to `.png` format
 
+**auget.py** — Mass extacting of MP3 audio tracks from videos
+
 Image conversion or video cutting can be done directly with the `imgconv.py` and `scenecutter.py` scripts.
 
 You can tweak some attributes in `settings.py` file.
@@ -47,6 +49,8 @@ You need to fix `google_images_download` package.
 **ytget.py** — массовая загрузка видео с YouTube со звуком и максимально возможным разрешением. Есть функция нарезки видео на сцены по желанию
 
 **imget.py** — массовая загрузка изображений по нескольким запросам из Google Images с опциями. Все фото конвертируются в формат `.png`
+
+**auget.py** — массовое извлечение аудио-дорожек в `.mp3` формате из видео
 
 Конвертация изображений или нарезка видео может быть выполнена непосредственно с помощью скриптов `imgconv.py` и `scenecutter.py`.
 
