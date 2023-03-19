@@ -1,0 +1,7 @@
+requests
+click-shell
+pillow
+pytube
+scenedetect
+imagesize
+google_images_download

@@ -37,9 +37,11 @@ def get_amount(value: str, default=IMGDEFCOUNT) -> int:
     :param default: default integer value
     :return: user value or default value, depends on input
     """
-    if isinstance(value, int) and value > 0:
-        return default if value is True else value
-    return default
+    try:
+        value = int(value)
+        return value if value > 0 else default
+    except (TypeError, ValueError):
+        return default
 
 
 def msg(message: str, seconds=0.5, refresh=False) -> None:

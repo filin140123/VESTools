@@ -9,9 +9,25 @@ import vesputils as vu
 from settings import DIRNAME, AUDIRNAME
 
 
+def extract(fp, num=None) -> None:
+    """
+    Extracts audio from file
+    :param fp: path to file
+    :param num: list of current video and total number of videos, for multiple videos
+    :return: None
+    """
+    name = fp.split("\\")[-1]
+    output = f"./{AUDIRNAME}/audio_{name[:-4]}.mp3"
+    if num:
+        vu.msg(f"\nExtracting audio, file {num[0]} of {num[1]}...\n")
+    else:
+        vu.msg(f"\nExtracting audio from {name}...\n")
+    os.system(f"ffmpeg -i \"{fp}\" -q:a 0 -map a \"{output}\"")
+
+
 def get_audio() -> None:
     """
-    Extracts audio from one or multiple video files
+    Setup for audio extraction
     :return: None
     """
     files = glob.glob(f".\\{DIRNAME}\\*")
@@ -26,19 +42,10 @@ def get_audio() -> None:
 
         if choice in ("all", "ALL", "All", "a", "A"):
             for idx, file in enumerate(files, 1):
-                name = file.split("\\")[-1]
-                output = f"./{AUDIRNAME}/audio_{name[:-4]}.mp3"
-
-                vu.msg(f"\nExtracting audio, file {idx} of {len(files)}...\n")
-                os.system(f"ffmpeg -i \"{file}\" -q:a 0 -map a \"{output}\"")
+                extract(file, [idx, len(files)])
             break
         elif int(choice) in range(1, len(files)+1):
-            file = files[int(choice)-1]
-            name = file.split("\\")[-1]
-            output = f"./{AUDIRNAME}/audio_{name[:-4]}.mp3"
-
-            vu.msg(f"\nExtracting audio from {name}...\n")
-            os.system(f"ffmpeg -i \"{file}\" -q:a 0 -map a \"{output}\"")
+            extract(files[int(choice)-1])
             break
         else:
             vu.msg("Wrong index, try again...")

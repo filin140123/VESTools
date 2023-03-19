@@ -18,7 +18,7 @@ except ImportError:
 
 # Installing python packages
 vu.msg("Installing python packages...")
-os.system("pip install requests click-shell pillow pytube scenedetect imagesize google_images_download")
+os.system("pip install -r requirements.txt")
 
 # Fixing google_image_download
 vu.msg("Fixing google_images_download...")
