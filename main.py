@@ -126,8 +126,9 @@ def settings():
     :return: None
     """
     print()
-    print(f"Directory for videos:    ./{st.DIRNAME}")
-    print(f"Directory for images:    ./{st.IMGDIRNAME}")
+    print(f"Directory for videos:    ./{st.DIRNAME}/")
+    print(f"Directory for images:    ./{st.IMGDIRNAME}/")
+    print(f"Directory for audio:     ./{st.AUDIRNAME}/")
     print(f"Default images amount:   {st.IMGDEFCOUNT} images")
     print()
 

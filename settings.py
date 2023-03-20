@@ -21,4 +21,4 @@ GIDFIXURL: str = "https://github.com/Joeclinton1/google-images-download/" \
                  "raw/patch-1/google_images_download/google_images_download.py"
 
 # version
-VERSION: str = "0.1.1, Chitin"
+VERSION: str = "0.1.3, Tardigrada"
