@@ -114,10 +114,7 @@ def version():
     Prints current version
     :return: None
     """
-    print()
-    print(f"Current version:    {st.VERSION}")
-    print()
-
+    print(f"\nCurrent version:    {st.VERSION}\n")
 
 @vestools_shell.command()
 def settings():
