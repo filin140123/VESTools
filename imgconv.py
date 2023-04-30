@@ -27,11 +27,7 @@ def prepare_images() -> None:
 
         info = f"image #{idx}, " + path.split("\\")[-1]
 
-        if path.endswith(".svg"):
-            print(f"Deleting junk {info}")
-            os.remove(path)
-            
-        elif imagesize.get(path) == IMGJUNKSIZE:
+        if path.endswith(".svg") or imagesize.get(path) == IMGJUNKSIZE:
             print(f"Deleting junk {info}")
             os.remove(path)
 

@@ -24,6 +24,6 @@ def cut_videos(videos: list) -> None:
 
 
 if __name__ == "__main__":
-    cut_videos([file for file in os.listdir(DIRNAME) if file.endswith(".mp4")])
+    cut_videos([f"{os.getcwd()}\\{DIRNAME}\\{file}" for file in os.listdir(DIRNAME) if file.endswith(".mp4")])
     vu.msg("Job is done!")
     input("Press any key to exit...")
